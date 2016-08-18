@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>UoM</title>
+  <meta name=author content=Ashesh>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <!-- bootstrap 3.0.2 -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- font Awesome -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- fullCalendar -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.print.css" rel="stylesheet" type="text/css" media='print' />
+  <!-- Theme style -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel=apple-touch-icon-precomposed sizes=144x144 href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel=apple-touch-icon-precomposed sizes=114x114 href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel=apple-touch-icon-precomposed sizes=72x72 href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel=apple-touch-icon-precomposed href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+  <style>
+    @media (max-width: 420px) {
+      .fc-header-right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="skin-blue">
+  <!-- header logo: style can be found in header.less -->
+  <header class="header">
+    <a href="index.html" class="logo">University of Mumabi <span>.</span></a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <!-- Messages: style can be found in dropdown.less-->
+      <div class="call-us span8">
+        <p><i class="fa fa-envelope"></i><a href="mailto:admin@uom.com?subject=help" id="emailus" target=_top> Email Us</a>
+        </p>
+      </div>
+      <!-- User Account: style can be found in dropdown.less -->
+
+
+    </nav>
+  </header>
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="left-side sidebar-offcanvas">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="img/avatar.png" class="img-circle" alt="User Image" />
+          </div>
+          <div class="pull-left info">
+            <p><a href="mailto:user501254@gmail.com"><i class="fa fa-pencil"></i>  Ashesh</a>
+            </p>
+            <a href="account.html"><i class="fa fa-cog"></i>Account Settings</a>
+          </div>
+        </div>
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li>
+            <a href="index.html">
+              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="statistics.html">
+              <i class="fa fa-bar-chart-o"></i> <span>Statistics</span>
+            </a>
+          </li>
+          <li class="active">
+            <a href="calendar.html">
+              <i class="fa fa-calendar-o"></i> <span>Calendar</span>
+              <small class="badge pull-right bg-purple">1</small>
+            </a>
+          </li>
+          <li>
+            <a href="contacts.html">
+              <i class="fa fa-table"></i> <span>All Contacts</span>
+            </a>
+          </li>
+          <li>.</br>.</li>
+          <li>
+            <a href="">
+              <i class="fa fa-dropbox"></i> <span>Media</span>
+              <small>(nothing here)</small>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-archive"></i>
+              <span>Archive</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="general.html"><i class="fa fa-angle-double-right"></i> Quotes</a>
+              </li>
+              <li><a href="timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a>
+              </li>
+            </ul>
+          </li>
+      <li><a href="https://www.facebook.com/pages/University-of-Mumbai/111950378821457"><i class="fa fa-facebook icon-3x"></i>Facebook Page</a>
+          </li>
+          <li>.</br>.</li>
+          <li>
+            <a href="">
+              <small><i class="fa fa-file-text"></i> <span>Credits (under progress)</span></small>
+            </a>
+          </li>
+          <div id="google_translate_element"></div>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <aside class="right-side">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+                        Calendar
+                        <small>Control panel</small>
+                    </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a>
+          </li>
+          <li class="active">Calendar</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box box-primary">
+              <div class="box-body no-padding">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+
+      </section>
+      <!-- /.content -->
+    </aside>
+    <!-- /.right-side -->
+  </div>
+  <!-- ./wrapper -->
+
+
+  <!-- jQuery 2.0.2 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <!-- AdminLTE App -->
+  <script src="js/extra/app.js" type="text/javascript"></script>
+  <!-- fullCalendar -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js" type="text/javascript"></script>
+  <!-- Page specific script -->
+  <script type="text/javascript">
+    $(function () {
+
+      /* initialize the external events
+       -----------------------------------------------------------------*/
+      function ini_events(ele) {
+        ele.each(function () {
+
+          // create an Event Object (https://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+          // it doesn't need to have a start or end
+          var eventObject = {
+            title: $.trim($(this).text()) // use the element's text as the event title
+          };
+
+          // store the Event Object in the DOM element so we can get to it later
+          $(this).data('eventObject', eventObject);
+
+          // make the event draggable using jQuery UI
+          $(this).draggable({
+            zIndex: 1070,
+            revert: true, // will cause the event to go back to its
+            revertDuration: 0 //  original position after the drag
+          });
+
+        });
+      }
+      ini_events($('#external-events div.external-event'));
+
+      /* initialize the calendar
+       -----------------------------------------------------------------*/
+      //Date for the calendar events (dummy data)
+      var date = new Date();
+      var d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear();
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        buttonText: { //This is to add icons to the visible buttons
+          prev: "<span class='fa fa-caret-left'></span>",
+          next: "<span class='fa fa-caret-right'></span>",
+          today: 'today',
+          month: 'month',
+          week: 'week',
+          day: 'day'
+        },
+        //Random default events
+        events: [
+          {
+            title: 'Inauguration',
+            start: new Date(2014, 7, 19, 16, 30),
+            allDay: false,
+            backgroundColor: "#85144b", //Success (green)
+            borderColor: "#85144b" //Success (green)
+                        },
+          {
+            title: 'Sport Events on respective Departmental Off Days',
+            start: new Date(2014, 7, 19),
+            end: new Date(2014, 8, 12),
+            backgroundColor: "#ff851b", //red
+            borderColor: "#ff851b" //red
+                        },
+          {
+            title: 'elims_Antakshari',
+            start: new Date(2014, 7, 19, 17, 30),
+            allDay: false,
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'elims_Quiz',
+            start: new Date(2014, 7, 20),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Mimicry/One act Play',
+            start: new Date(2014, 7, 20),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Rangoli/Poster Making',
+            start: new Date(2014, 7, 21),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Antakshari',
+            start: new Date(2014, 7, 22),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Photography',
+            start: new Date(2014, 7, 22),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Face Painting',
+            start: new Date(2014, 7, 23),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Singing (solo | hin)',
+            start: new Date(2014, 7, 23),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Bathroom Singing',
+            start: new Date(2014, 7, 25),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Mehendi Art)',
+            start: new Date(2014, 7, 25),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Nail Art',
+            start: new Date(2014, 7, 26),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Fastest 5',
+            start: new Date(2014, 7, 27),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'elims_Debate',
+            start: new Date(2014, 7, 28),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Street Play',
+            start: new Date(2014, 7, 28),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Film Making',
+            start: new Date(2014, 7, 30),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Quiz',
+            start: new Date(2014, 7, 30),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Dance (group)',
+            start: new Date(2014, 8, 1),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Creative Art',
+            start: new Date(2014, 8, 2),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'elims_Treasure Hunt',
+            start: new Date(2014, 8, 3),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Dance (duet)',
+            start: new Date(2014, 8, 4),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Dance (solo)',
+            start: new Date(2014, 8, 4),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Debate',
+            start: new Date(2014, 8, 5),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Treasure Hunt',
+            start: new Date(2014, 8, 5),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Food Fest',
+            start: new Date(2014, 8, 6),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Singing (duet)',
+            start: new Date(2014, 8, 6),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Personality Contest',
+            start: new Date(2014, 8, 8),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Wear something Traditional and then do dedications :-)',
+            start: new Date(2014, 8, 8),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Singing (solo | eng)',
+            start: new Date(2014, 8, 9),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Instumentals',
+            start: new Date(2014, 8, 10),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Raddi collection Day',
+            start: new Date(2014, 8, 11),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Band',
+            start: new Date(2014, 8, 12),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Close',
+            start: new Date(2014, 8, 13),
+            backgroundColor: "#932ab6", //Blue
+            borderColor: "#932ab6" //Blue
+                        },
+          {
+            title: 'Click for Google Sync and Mobile Notifications',
+            start: new Date(2014, 7, 10),
+            end: new Date(2014, 7, 16),
+            url: 'https://www.google.com/calendar/embed?src=iv5iurn55kf8comil9kjti940o%40group.calendar.google.com&ctz=Asia/Calcutta',
+            backgroundColor: "#001f3f", //Primary (light-blue)
+            borderColor: "#001f3f" //Primary (light-blue)
+                        }
+                    ],
+        editable: true,
+        droppable: true, // this allows things to be dropped onto the calendar !!!
+        drop: function (date, allDay) { // this function is called when something is dropped
+
+          // retrieve the dropped element's stored Event Object
+          var originalEventObject = $(this).data('eventObject');
+
+          // we need to copy it, so that multiple events don't have a reference to the same object
+          var copiedEventObject = $.extend({}, originalEventObject);
+
+          // assign it the date that was reported
+          copiedEventObject.start = date;
+          copiedEventObject.allDay = allDay;
+          copiedEventObject.backgroundColor = $(this).css("background-color");
+          copiedEventObject.borderColor = $(this).css("border-color");
+
+          // render the event on the calendar
+          // the last `true` argument determines if the event "sticks" (https://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+          $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+          // is the "remove after drop" checkbox checked?
+          if ($('#drop-remove').is(':checked')) {
+            // if so, remove the element from the "Draggable Events" list
+            $(this).remove();
+          }
+
+        }
+      });
+
+      /* ADDING EVENTS */
+      var currColor = "#ff851b"; //Red by default
+      //Color chooser button
+      var colorChooser = $("#color-chooser-btn");
+      $("#color-chooser > li > a").click(function (e) {
+        e.preventDefault();
+        //Save color
+        currColor = $(this).css("color");
+        //Add color effect to button
+        colorChooser
+          .css({
+            "background-color": currColor,
+            "border-color": currColor
+          })
+          .html($(this).text() + ' <span class="caret"></span>');
+      });
+      $("#add-new-event").click(function (e) {
+        e.preventDefault();
+        //Get value and make sure it is not null
+        var val = $("#new-event").val();
+        if (val.length == 0) {
+          return;
+        }
+
+        //Create event
+        var event = $("<div />");
+        event.css({
+          "background-color": currColor,
+          "border-color": currColor,
+          "color": "#fff"
+        }).addClass("external-event");
+        event.html(val);
+        $('#external-events').prepend(event);
+
+        //Add draggable funtionality
+        ini_events(event);
+
+        //Remove event from text input
+        $("#new-event").val("");
+      });
+    });
+  </script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59475504-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr',
+        gaTrack: true,
+        gaId: 'UA-59475504-2'
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
